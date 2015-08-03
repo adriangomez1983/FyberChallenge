@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F440FCE568227EFDFA35006 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C840A2558DF4CAB785B827F3 /* libPods.a */; };
+		846040021B6EB27E00B6C840 /* FCOfferTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846040011B6EB27E00B6C840 /* FCOfferTableViewCell.m */; };
 		84A650E91B6C5F5700BC6EE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A650E81B6C5F5700BC6EE6 /* main.m */; };
 		84A650EC1B6C5F5700BC6EE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A650EB1B6C5F5700BC6EE6 /* AppDelegate.m */; };
 		84A650EF1B6C5F5700BC6EE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A650EE1B6C5F5700BC6EE6 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		846040001B6EB27E00B6C840 /* FCOfferTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCOfferTableViewCell.h; sourceTree = "<group>"; };
+		846040011B6EB27E00B6C840 /* FCOfferTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCOfferTableViewCell.m; sourceTree = "<group>"; };
 		84A650E31B6C5F5700BC6EE6 /* FyberChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FyberChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A650E71B6C5F5700BC6EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A650E81B6C5F5700BC6EE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				84A650EB1B6C5F5700BC6EE6 /* AppDelegate.m */,
 				84A650ED1B6C5F5700BC6EE6 /* ViewController.h */,
 				84A650EE1B6C5F5700BC6EE6 /* ViewController.m */,
+				846040001B6EB27E00B6C840 /* FCOfferTableViewCell.h */,
+				846040011B6EB27E00B6C840 /* FCOfferTableViewCell.m */,
 				84A650F01B6C5F5700BC6EE6 /* Main.storyboard */,
 				84A650F31B6C5F5700BC6EE6 /* Images.xcassets */,
 				84A650F51B6C5F5700BC6EE6 /* LaunchScreen.xib */,
@@ -315,6 +320,7 @@
 			files = (
 				84CECB961B6D1999006207DC /* FCOffersParser.m in Sources */,
 				84A650EF1B6C5F5700BC6EE6 /* ViewController.m in Sources */,
+				846040021B6EB27E00B6C840 /* FCOfferTableViewCell.m in Sources */,
 				84A650EC1B6C5F5700BC6EE6 /* AppDelegate.m in Sources */,
 				84A6510E1B6C623F00BC6EE6 /* FCOffersAPIManager.m in Sources */,
 				84A650E91B6C5F5700BC6EE6 /* main.m in Sources */,

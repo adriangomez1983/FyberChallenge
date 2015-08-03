@@ -8,8 +8,17 @@
 
 #import "ViewController.h"
 #import "FCOffersAPIManager.h"
+#import "FCOfferTableViewCell.h"
+#import "FCOffer.h"
 
-@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+static NSString *givenIPAddress     =   @"109.235.143.113";
+static NSString *givenLocale        =   @"DE";
+static NSString *givenOfferTypes    =   @"112";
+
+static NSString *FCOfferCellIdentifier = @"cellIdentifier";
+static NSUInteger kRetryIndex = 1;
+
+@interface ViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *uidTextField;
 @property (weak, nonatomic) IBOutlet UITextField *apiKeyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *appIDTextField;
@@ -31,6 +40,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.noOffersLabel.hidden = YES;
+    self.tableView.hidden = NO;
     
 }
 
@@ -38,6 +48,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)displayErrorWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERROR", nil)
+                                                    message:error.localizedDescription
+                                                   delegate:nil
+                                          cancelButtonTitle: NSLocalizedString(@"OK", nil)
+                                          otherButtonTitles: nil];
+    if (error.code == FCWrongRequestErrorCode)
+    {
+        
+        alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERROR", nil)
+                                           message:NSLocalizedString(@"Wrong request. Retry please.", nil)
+                                          delegate:self
+                                 cancelButtonTitle: NSLocalizedString(@"Cancel", nil)
+                                 otherButtonTitles: NSLocalizedString(@"Retry", nil), nil];
+    }
+    
+    [alert show];
+}
+
 - (IBAction)onSearchAction:(id)sender
 {
     NSLog(@"Search action");
@@ -45,19 +76,17 @@
     [[FCOffersAPIManager sharedInstance] queryWithUID:self.uidTextField.text
                                            withAPIKey:self.apiKeyTextField.text
                                             withAppID:self.appIDTextField.text
-                                       withCompletion:^(NSArray *offers)
+                                        withIPAddress:givenIPAddress
+                                           withLocale:givenLocale
+                                        withOfferType:givenOfferTypes
+                                       withCompletion:^(NSArray *offers, NSUInteger remainingPages)
     {
         self.offersData = offers;
         [self.tableView reloadData];
     }
                                           withFailure:^(NSError *error)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERROR", nil)
-                                                        message:error.localizedDescription
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        [self displayErrorWithError:error];
     }];
 }
 
@@ -68,11 +97,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = nil;
+    FCOfferTableViewCell *cell = (FCOfferTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:FCOfferCellIdentifier forIndexPath:indexPath];
+    
+    FCOffer *offer = (FCOffer *)[self.offersData objectAtIndex:indexPath.row];
+    cell.title.text = offer.title;
+    cell.teaser.text = offer.teaser;
+    cell.payout.text = [offer.payout stringValue];
+    [cell loadThumbnailWithURL:[NSURL URLWithString:offer.hiresThumbnailLink]];
     
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] init];
+        return [[UITableViewCell alloc] init];
     }
     return cell;
 }
@@ -84,5 +119,27 @@
 }
 
 
+#pragma mark - UIAlertViewDelegate methods
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == kRetryIndex)
+    {
+        [[FCOffersAPIManager sharedInstance] queryWithUID:self.uidTextField.text
+                                               withAPIKey:self.apiKeyTextField.text
+                                                withAppID:self.appIDTextField.text
+                                            withIPAddress:givenIPAddress
+                                               withLocale:givenLocale
+                                            withOfferType:givenOfferTypes
+                                           withCompletion:^(NSArray *offers, NSUInteger remainingPages)
+         {
+             self.offersData = offers;
+             [self.tableView reloadData];
+         }
+                                              withFailure:^(NSError *error)
+         {
+             [self displayErrorWithError:error];
+         }];
+    }
+}
 
 @end

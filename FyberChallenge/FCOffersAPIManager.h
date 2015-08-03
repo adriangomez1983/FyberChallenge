@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers);
+typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers, NSUInteger remainingPages);
 typedef void(^FCOffersAPIManagerFailure)(NSError *error);
+
+extern NSInteger FCWrongRequestErrorCode;
 
 @interface FCOffersAPIManager : NSObject
 
@@ -18,6 +20,9 @@ typedef void(^FCOffersAPIManagerFailure)(NSError *error);
 -(void)queryWithUID:(NSString *)uid
          withAPIKey:(NSString *)apiKey
           withAppID:(NSString *)appID
+      withIPAddress:(NSString *)ipAddr
+         withLocale:(NSString *)locale
+      withOfferType:(NSString *)offerType
      withCompletion:(FCOffersAPIManagerCompletion)completion
         withFailure:(FCOffersAPIManagerFailure)failure;
 
