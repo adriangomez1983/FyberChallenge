@@ -10,6 +10,7 @@
 
 @interface FCOfferTableViewCell()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (weak, nonatomic) NSURL *currentThumbnailURL;
 
 @end
 
@@ -27,7 +28,7 @@
 
 -(void)loadThumbnailWithURL:(NSURL *)thumbnailURL
 {
-    if (!thumbnailURL)
+    if (!thumbnailURL || [self.currentThumbnailURL.absoluteString isEqualToString:thumbnailURL.absoluteString])
     {
         return;
     }

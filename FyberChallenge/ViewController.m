@@ -10,13 +10,13 @@
 #import "FCOffersAPIManager.h"
 #import "FCOfferTableViewCell.h"
 #import "FCOffer.h"
+#import "MBProgressHUD.h"
 
 static NSString *givenIPAddress     =   @"109.235.143.113";
 static NSString *givenLocale        =   @"DE";
 static NSString *givenOfferTypes    =   @"112";
 
 static NSString *FCOfferCellIdentifier = @"cellIdentifier";
-static NSUInteger kRetryIndex = 1;
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *uidTextField;
@@ -27,6 +27,7 @@ static NSUInteger kRetryIndex = 1;
 
 @property (nonatomic, strong) NSArray *offersData;
 @property (weak, nonatomic) IBOutlet UILabel *recordsCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
 
 @end
 
@@ -40,26 +41,20 @@ static NSUInteger kRetryIndex = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self showNoOffers];
     [self updateRecordsCountWithCount:0];
     
 }
 
 -(void)updateRecordsCountWithCount:(NSInteger)count
 {
-    self.recordsCountLabel.text = [NSString stringWithFormat:@"%lu", count];
-}
-
--(void)showNoOffers
-{
-    self.noOffersLabel.hidden = NO;
-    self.tableView.hidden = YES;
-}
-
--(void)hideNoOffers
-{
-    self.noOffersLabel.hidden = YES;
-    self.tableView.hidden = NO;
+    if (count == 0)
+    {
+        self.recordsCountLabel.text = NSLocalizedString(@"No Offers", nil);
+    }
+    else
+    {
+        self.recordsCountLabel.text = [NSString stringWithFormat:@"%lu", count];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,22 +69,19 @@ static NSUInteger kRetryIndex = 1;
                                                    delegate:nil
                                           cancelButtonTitle: NSLocalizedString(@"OK", nil)
                                           otherButtonTitles: nil];
-    if (error.code == FCWrongRequestErrorCode)
-    {
-        
-        alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ERROR", nil)
-                                           message:NSLocalizedString(@"Wrong request. Retry please.", nil)
-                                          delegate:self
-                                 cancelButtonTitle: NSLocalizedString(@"Cancel", nil)
-                                 otherButtonTitles: NSLocalizedString(@"Retry", nil), nil];
-    }
-    
     [alert show];
+}
+
+-(void)reEnableSearch
+{
+    self.searchButton.enabled = YES;
 }
 
 - (IBAction)onSearchAction:(id)sender
 {
-    NSLog(@"Search action");
+    self.searchButton.enabled = NO;
+    __block MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = NSLocalizedString(@"Getting offers", nil);
     
     __weak __typeof(self) weakSelf = self;
     [FCOffersAPIManager sharedInstance].uid = self.uidTextField.text;
@@ -98,27 +90,29 @@ static NSUInteger kRetryIndex = 1;
     [FCOffersAPIManager sharedInstance].ipAddr = givenIPAddress;
     [FCOffersAPIManager sharedInstance].locale = givenLocale;
     [[FCOffersAPIManager sharedInstance] fetchOffersWithOfferType:givenOfferTypes
-                                                   withCompletion:^(NSArray *offers)
+                                                   withCompletion:^(NSArray *offers, NSInteger remainingPageCount)
     {
+         NSLog(@"success remaining counts %lu", remainingPageCount);
         __strong ViewController *strongSelf = weakSelf;
-        if (offers.count == 0)
-        {
-            [strongSelf showNoOffers];
-        }
-        else
-        {
-            [strongSelf hideNoOffers];
-            strongSelf.offersData = offers;
-            [strongSelf.tableView reloadData];
-        }
+        strongSelf.offersData = offers;
+        [strongSelf.tableView reloadData];
         [strongSelf updateRecordsCountWithCount:offers.count];
+        if (remainingPageCount == 0)
+        {
+            strongSelf.searchButton.enabled = YES;
+            [hud hide:YES];
+        }
     }
                                           withFailure:^(NSError *error)
     {
+         NSLog(@"failure");
         __strong ViewController *strongSelf = weakSelf;
-        [strongSelf showNoOffers];
         [strongSelf updateRecordsCountWithCount:0];
+        strongSelf.offersData = @[];
+        [strongSelf.tableView reloadData];
         [strongSelf displayErrorWithError:error];
+        strongSelf.searchButton.enabled = YES;
+        [hud hide:YES];
     }];
 }
 
@@ -142,31 +136,6 @@ static NSUInteger kRetryIndex = 1;
         return [[UITableViewCell alloc] init];
     }
     return cell;
-}
-
-#pragma mark UITableViewDelegate methods
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Row %lu seleced", indexPath.row);
-}
-
-
-#pragma mark - UIAlertViewDelegate methods
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == kRetryIndex)
-    {
-        [[FCOffersAPIManager sharedInstance] fetchOffersWithOfferType:givenOfferTypes
-                                                       withCompletion:^(NSArray *offers)
-         {
-             self.offersData = offers;
-             [self.tableView reloadData];
-         }
-                                              withFailure:^(NSError *error)
-         {
-             [self displayErrorWithError:error];
-         }];
-    }
 }
 
 @end

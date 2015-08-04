@@ -124,23 +124,23 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Offers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-64-ttD">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Offers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6o-64-ttD">
                                 <rect key="frame" x="263" y="337" width="73.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sg-mG-8iN">
-                                <rect key="frame" x="204" y="171" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sg-mG-8iN">
+                                <rect key="frame" x="203.5" y="171" width="91" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="9Bk-TJ-I7c"/>
+                                    <constraint firstAttribute="width" constant="91" id="9Bk-TJ-I7c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Records count:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-vk-CXz">
-                                <rect key="frame" x="78" y="170" width="118" height="21"/>
+                                <rect key="frame" x="78" y="170" width="117.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -181,6 +181,7 @@
                         <outlet property="appIDTextField" destination="fB9-W2-xSC" id="lkA-il-W5H"/>
                         <outlet property="noOffersLabel" destination="k6o-64-ttD" id="gfL-vE-aAb"/>
                         <outlet property="recordsCountLabel" destination="8sg-mG-8iN" id="Q10-JI-GNE"/>
+                        <outlet property="searchButton" destination="q5M-I3-zWQ" id="9Lm-En-DmQ"/>
                         <outlet property="tableView" destination="heQ-mY-4Y9" id="d6B-EZ-NrV"/>
                         <outlet property="uidTextField" destination="1Hi-tb-BLN" id="3eI-gn-xQB"/>
                     </connections>

@@ -12,16 +12,17 @@
 #include <CommonCrypto/CommonDigest.h>
 #import "FCOffersParser.h"
 
+static NSString *kOffersURL = @"http://api.sponsorpay.com/feed/v1/offers";
+
 static NSString *responseSignatureKey   =   @"X-Sponsorpay-Response-Signature";
 
-NSInteger FCWrongRequestErrorCode           =   1000;
-NSInteger FCMissingParametersErrorCode      =   1001;
+NSInteger FCMissingParametersErrorCode      =   1000;
 
 static FCOffersAPIManager *_instance = nil;
 
 @interface FCOffersAPIManager()
 
-@property (nonatomic, assign) NSInteger remainingPages;
+@property (nonatomic, assign) NSInteger totalPageCount;
 @property (nonatomic, assign) NSInteger currentPageNumber;
 @property (nonatomic, copy) FCOffersAPIManagerCompletion completion;
 @property (nonatomic, copy) FCOffersAPIManagerFailure failure;
@@ -35,7 +36,7 @@ static FCOffersAPIManager *_instance = nil;
 {
     if (self = [super init])
     {
-        _remainingPages = 0;
+        _totalPageCount = 0;
         _currentPageNumber = 1;
         
         _appID = @"";
@@ -79,8 +80,7 @@ static FCOffersAPIManager *_instance = nil;
            withCompletion:(FCOffersAPIManagerCompletion)completion
               withFailure:(FCOffersAPIManagerFailure)failure;
 {
-    self.remainingPages = 0;
-    self.currentPageNumber = 1;
+    self.totalPageCount = 0;
     [self.currentOffers removeAllObjects];
     
     self.completion = completion;
@@ -132,7 +132,7 @@ static FCOffersAPIManager *_instance = nil;
     NSString *fullParams = [NSString stringWithFormat:@"%@&%@", allParams, self.apiKey];
     NSString *paramsHash = [self sha1:fullParams];
     NSString *allParamsWithHash = [NSString stringWithFormat:@"%@&hashkey=%@", allParams, paramsHash];
-    NSString *queryStr = [NSString stringWithFormat:@"http://api.sponsorpay.com/feed/v1/offers.%@?%@", @"json", allParamsWithHash];
+    NSString *queryStr = [NSString stringWithFormat:@"%@.%@?%@", kOffersURL, @"json", allParamsWithHash];
     
     __weak __typeof(self) weakSelf = self;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -142,9 +142,10 @@ static FCOffersAPIManager *_instance = nil;
          success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
          __strong FCOffersAPIManager *strongSelf = weakSelf;
-         if ([strongSelf responseIsValidWithResponseSignature:operation.response.allHeaderFields[responseSignatureKey]
-                                       withResponseData:responseObject
-                                             withAPIKey:strongSelf.apiKey])
+         NSString *responseSignature = operation.response.allHeaderFields[responseSignatureKey];
+         if ([strongSelf responseIsValidWithResponseSignature:responseSignature
+                                             withResponseData:responseObject
+                                                   withAPIKey:strongSelf.apiKey])
          {
              NSError *error = nil;
              NSDictionary *offersDataDict = [NSJSONSerialization JSONObjectWithData: responseObject
@@ -156,35 +157,37 @@ static FCOffersAPIManager *_instance = nil;
              }
              else
              {
-                 if (self.remainingPages <= 0)
+                 if (strongSelf.totalPageCount <= 0)
                  {
-                     self.remainingPages = [offersDataDict[@"pages"] integerValue];
-                     self.currentPageNumber = 2;
+                     strongSelf.totalPageCount = [offersDataDict[@"pages"] integerValue];
+                     strongSelf.currentPageNumber = 2;
                  }
                  else
                  {
-                     self.currentPageNumber++;
+                     strongSelf.currentPageNumber++;
                  }
                  NSArray *offers = [FCOffersParser parse:offersDataDict];
                  [strongSelf.currentOffers addObjectsFromArray:offers];
-                 strongSelf.completion(strongSelf.currentOffers);
-                 if (self.currentPageNumber < self.remainingPages)
+                 NSInteger remainingPages = 0;
+                 if (strongSelf.totalPageCount != 0)
+                 {
+                     remainingPages = strongSelf.totalPageCount - strongSelf.currentPageNumber + 1;
+                 }
+                 strongSelf.completion(strongSelf.currentOffers, remainingPages);
+                 if (strongSelf.currentPageNumber <= strongSelf.totalPageCount)
                  {
                      [strongSelf processNextPage];
                  }
                  
              }
          }
-         else if (self.currentPageNumber < self.remainingPages)
+         else if (self.currentPageNumber <= strongSelf.totalPageCount)
          {
              [strongSelf processNextPage];
          }
          else
          {
-             NSError *error = [[NSError alloc] initWithDomain:@"FCOffersAPIManager"
-                                                         code:FCWrongRequestErrorCode
-                                                     userInfo:@{NSLocalizedDescriptionKey : @"Wrong request"}];
-             strongSelf.failure(error);
+             strongSelf.completion(strongSelf.currentOffers, 0);
          }
          
      }
@@ -252,7 +255,7 @@ static FCOffersAPIManager *_instance = nil;
     NSString *verificationString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSString *generatedHash = [self sha1:verificationString];
     
-    NSLog(@"GENERATED HASH:%@\n\nGIVEN HASH:%@", generatedHash, responseSignature);
+    NSLog(@"\nGENERATED HASH:%@\n\nGIVEN     HASH:%@", generatedHash, responseSignature);
     
     return [generatedHash isEqualToString:responseSignature];
 }

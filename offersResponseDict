@@ -1,0 +1,898 @@
+{
+    code = OK;
+    count = 30;
+    information =     {
+        "app_name" = "VC Backend Test";
+        appid = 2070;
+        country = DE;
+        language = DE;
+        "support_url" = "http://api.sponsorpay.com/support?appid=2070&feed=on&mobile=on&uid=spiderman";
+        "virtual_currency" = "VCS Coins";
+    };
+    message = Ok;
+    offers =     (
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/9acbb18057bdb0f2/mobile/DE/2070/offers/185333";
+            "offer_id" = 185333;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 21;
+            "required_actions" = "Registriere dich, best\U00e4tige Deine E-Mailadresse und nimm an Umfragen teil!";
+            "store_id" = "";
+            teaser = "Registriere dich, best\U00e4tige Deine E-Mailadresse und nimm an Umfragen teil!";
+            thumbnail =             {
+                hires = "http://cdn3.sponsorpay.com/assets/27245/entscheiderclub_square_175.gif";
+                lowres = "http://cdn3.sponsorpay.com/assets/27245/entscheiderclub_square_60.gif";
+            };
+            "time_to_payout" =             {
+                amount = 73800;
+                readable = "21 Stunden";
+            };
+            title = "EntscheiderClub - Umfrage";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/6d3d5e79bee34a56/mobile/DE/2070/offers/160900";
+            "offer_id" = 160900;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 110;
+                    readable = Umfragen;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 43;
+            "required_actions" = "Registriere dich und nimm gewissenhaft an der Umfrage teil";
+            "store_id" = "";
+            teaser = "Registriere dich und nimm gewissenhaft an der Umfrage teil";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/321/Sampling_International_square_175.png";
+                lowres = "http://cdn4.sponsorpay.com/assets/321/Sampling_International_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 9000;
+                readable = "3 Stunden";
+            };
+            title = "Survey Sampling - Umfrage";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/cf7177a3524a12ec/mobile/DE/2070/offers/144666/preview";
+            "offer_id" = 144666;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 106;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 109;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 118;
+            "required_actions" = "Registriere dich mit korrekten Daten und spiele bis du 750 Punkte erreichst";
+            "store_id" = "";
+            teaser = "Registriere dich mit korrekten Daten und spiele bis du 750 Punkte erreichst";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/9920/Grepolis_square_175.png";
+                lowres = "http://cdn4.sponsorpay.com/assets/9920/Grepolis_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 96600;
+                readable = "einem Tag";
+            };
+            title = "Grepolis - Jetzt kostenlos spielen!";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/6a34dfae958d64f5/mobile/DE/2070/offers/99852";
+            "offer_id" = 99852;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 13;
+            "required_actions" = "Melde dich f\U00fcr Newsletter deiner Wahl an und best\U00e4tige deine Email";
+            "store_id" = "";
+            teaser = "Melde dich f\U00fcr Newsletter deiner Wahl an und best\U00e4tige deine Email";
+            thumbnail =             {
+                hires = "http://cdn1.sponsorpay.com/assets/71/kiosk_square_175.gif";
+                lowres = "http://cdn1.sponsorpay.com/assets/71/kiosk_square_60.gif";
+            };
+            "time_to_payout" =             {
+                amount = 0;
+                readable = "einer Minute";
+            };
+            title = "Katalog Kiosk";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/15ff5040e6780e7e/mobile/DE/2070/offers/591905/preview";
+            "offer_id" = 591905;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 102;
+                    readable = Proben;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 498;
+            "required_actions" = "Submit valid email and payment information. No purchase necessary. ";
+            "store_id" = "";
+            teaser = "Submit valid email and payment information. No purchase necessary. ";
+            thumbnail =             {
+                hires = "http://cdn2.sponsorpay.com/assets/54767/1438198979_youtube_square_175.png";
+                lowres = "http://cdn2.sponsorpay.com/assets/54767/1438198979_youtube_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 0;
+                readable = "einer Minute";
+            };
+            title = Videostripe;
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/794059b00beb038c/mobile/DE/2070/offers/578898";
+            "offer_id" = 578898;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 106;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 109;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 17;
+            "required_actions" = "Open Appwall and install any new app";
+            "store_id" = "";
+            teaser = "Open Appwall and install any new app";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/45087/android_square_175.png";
+                lowres = "http://cdn4.sponsorpay.com/assets/45087/android_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = " AppWall \U00a9 -  Free App of the Day!";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/6ec430a0269a6d51/mobile/DE/2070/offers/592148";
+            "offer_id" = 592148;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 22;
+            "required_actions" = "Herunterladen und STARTEN";
+            "store_id" = "de.payback.client.android";
+            teaser = "Herunterladen und STARTEN";
+            thumbnail =             {
+                hires = "http://cdn1.sponsorpay.com/app_icons/31071/big_mobile_icon.png";
+                lowres = "http://cdn1.sponsorpay.com/app_icons/31071/small_mobile_icon.png";
+            };
+            "time_to_payout" =             {
+                amount = 1200;
+                readable = "20 Minuten";
+            };
+            title = "PAYBACK - Coupons & Gutscheine";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/bd8f33492deb90d7/mobile/DE/2070/offers/588747/preview";
+            "offer_id" = 588747;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 72;
+            "required_actions" = "Nimm mit deinen korrekten Daten am Gewinnspiel teil.";
+            "store_id" = "";
+            teaser = "Nimm mit deinen korrekten Daten am Gewinnspiel teil.";
+            thumbnail =             {
+                hires = "http://cdn2.sponsorpay.com/assets/51413/winappleproducts175x175_1_square_175.jpg";
+                lowres = "http://cdn2.sponsorpay.com/assets/51413/winappleproducts175x175_1_square_60.jpg";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = "Gewinne dein Apple!";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/7af0d8d38c8b9b9c/mobile/DE/2070/offers/588045";
+            "offer_id" = 588045;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 106;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 109;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 23;
+            "required_actions" = "Herunterladen und STARTEN";
+            "store_id" = "com.linecorp.LGRGS";
+            teaser = "Herunterladen und STARTEN";
+            thumbnail =             {
+                hires = "http://cdn1.sponsorpay.com/app_icons/42462/big_mobile_icon.png";
+                lowres = "http://cdn1.sponsorpay.com/app_icons/42462/small_mobile_icon.png";
+            };
+            "time_to_payout" =             {
+                amount = 600;
+                readable = "10 Minuten";
+            };
+            title = "LINE Rangers";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/ee797513db25de21/mobile/DE/2070/offers/590232/preview";
+            "offer_id" = 590232;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 106;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 109;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 51;
+            "required_actions" = "Play Jump Up and reach 30 points";
+            "store_id" = "";
+            teaser = "Play Jump Up and reach 30 points";
+            thumbnail =             {
+                hires = "http://cdn1.sponsorpay.com/assets/54678/jump-up-250_square_175.jpg";
+                lowres = "http://cdn1.sponsorpay.com/assets/54678/jump-up-250_square_60.jpg";
+            };
+            "time_to_payout" =             {
+                amount = 1200;
+                readable = "20 Minuten";
+            };
+            title = "Jump Up - Erreiche 30 Punkte";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/86662731ebaf8ed5/mobile/DE/2070/offers/585564/preview";
+            "offer_id" = 585564;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 26;
+            "required_actions" = "Download, open and install any new app. ";
+            "store_id" = "net.appbounty.android";
+            teaser = "Download, open and install any new app. ";
+            thumbnail =             {
+                hires = "http://cdn2.sponsorpay.com/app_icons/42681/big_mobile_icon.png";
+                lowres = "http://cdn2.sponsorpay.com/app_icons/42681/small_mobile_icon.png";
+            };
+            "time_to_payout" =             {
+                amount = 11700;
+                readable = "3 Stunden";
+            };
+            title = "AppBounty \U2013 Free gift cards";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/49b6d4f62c39cdf0/mobile/DE/2070/offers/594110";
+            "offer_id" = 594110;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 9;
+            "required_actions" = "Herunterladen und STARTEN";
+            "store_id" = "com.lazyswipe";
+            teaser = "Herunterladen und STARTEN";
+            thumbnail =             {
+                hires = "http://cdn3.sponsorpay.com/app_icons/31765/big_mobile_icon.png";
+                lowres = "http://cdn3.sponsorpay.com/app_icons/31765/small_mobile_icon.png";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = "Omni Swipe - Fast Easy Booster";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/59e59177dbac54ee/mobile/DE/2070/offers/591638";
+            "offer_id" = 591638;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 13;
+            "required_actions" = "Herunterladen und STARTEN";
+            "store_id" = "de.lieferheld.android";
+            teaser = "Herunterladen und STARTEN";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/app_icons/4394/big_mobile_icon.png";
+                lowres = "http://cdn4.sponsorpay.com/app_icons/4394/small_mobile_icon.png";
+            };
+            "time_to_payout" =             {
+                amount = 300;
+                readable = "5 Minuten";
+            };
+            title = "Lieferheld - Pizza Pasta Sushi";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/1e11bc43f4ad1323/mobile/DE/2070/offers/594257/preview";
+            "offer_id" = 594257;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 72;
+            "required_actions" = "1. Anmeldeformular ausf\U00fcllen. 2. Code eingeben. 3. E-Mail best\U00e4tigen.";
+            "store_id" = "";
+            teaser = "1. Anmeldeformular ausf\U00fcllen. 2. Code eingeben. 3. E-Mail best\U00e4tigen.";
+            thumbnail =             {
+                hires = "http://cdn1.sponsorpay.com/assets/2552/mzl.ddpbsngt.175x175-75_square_175.png";
+                lowres = "http://cdn1.sponsorpay.com/assets/2552/mzl.ddpbsngt.175x175-75_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = "Telekom Sommer Gewinnspiel";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/f0d998f165e2e191/mobile/DE/2070/offers/582198/preview";
+            "offer_id" = 582198;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 104;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 108;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 111;
+            "required_actions" = "Registriere dich mit korrekten Daten ";
+            "store_id" = "";
+            teaser = "Registriere dich mit korrekten Daten ";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/54243/Auto_oder_Geld-Gewinnspiel.clipular_square_175.png";
+                lowres = "http://cdn4.sponsorpay.com/assets/54243/Auto_oder_Geld-Gewinnspiel.clipular_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = "Gewinnen Sie einen Audi A3";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/eeb0919f01dc9249/mobile/DE/2070/offers/582183/preview";
+            "offer_id" = 582183;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 104;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 108;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 138;
+            "required_actions" = "Registriere dich mit korrekten Daten ";
+            "store_id" = "";
+            teaser = "Registriere dich mit korrekten Daten ";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/54240/Technology_selection_action.clipular_square_175.png";
+                lowres = "http://cdn4.sponsorpay.com/assets/54240/Technology_selection_action.clipular_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 1200;
+                readable = "20 Minuten";
+            };
+            title = "Gewinnen Ihr Apple Wunschprodukt!";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/5d1580ce201d4af4/mobile/DE/2070/offers/594350";
+            "offer_id" = 594350;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 106;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 109;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 48;
+            "required_actions" = "Herunterladen und STARTEN";
+            "store_id" = "air.com.differencegames.hospringcleaningfree";
+            teaser = "Herunterladen und STARTEN";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/app_icons/42810/big_mobile_icon.png";
+                lowres = "http://cdn4.sponsorpay.com/app_icons/42810/small_mobile_icon.png";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = "Hidden Object: Spring Cleaning";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/71e1be03cf08df11/mobile/DE/2070/offers/582162/preview";
+            "offer_id" = 582162;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 104;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 108;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 138;
+            "required_actions" = "Registriere dich mit korrekten Daten ";
+            "store_id" = "";
+            teaser = "Registriere dich mit korrekten Daten ";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/46163/iphone_6_square_175.png";
+                lowres = "http://cdn4.sponsorpay.com/assets/46163/iphone_6_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 9000;
+                readable = "3 Stunden";
+            };
+            title = "Gewinnen Ihr Apple Wunschprodukt!";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/7652a3aff8ff30e7/mobile/DE/2070/offers/592103/preview";
+            "offer_id" = 592103;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 106;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 109;
+                    readable = Spiele;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 77;
+            "required_actions" = "Play 1 plus 2 equals 3 and reach 13 points";
+            "store_id" = "";
+            teaser = "Play 1 plus 2 equals 3 and reach 13 points";
+            thumbnail =             {
+                hires = "http://cdn2.sponsorpay.com/assets/54782/softgames_123_square_175.jpg";
+                lowres = "http://cdn2.sponsorpay.com/assets/54782/softgames_123_square_60.jpg";
+            };
+            "time_to_payout" =             {
+                amount = 600;
+                readable = "10 Minuten";
+            };
+            title = "1 plus 2 equals 3 - 13 Punkte";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/52b70e2bd847ebac/mobile/DE/2070/offers/582195/preview";
+            "offer_id" = 582195;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 104;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 108;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 138;
+            "required_actions" = "Registriere dich mit korrekten Daten ";
+            "store_id" = "";
+            teaser = "Registriere dich mit korrekten Daten ";
+            thumbnail =             {
+                hires = "http://cdn3.sponsorpay.com/assets/53025/Apple_package_square_175.png";
+                lowres = "http://cdn3.sponsorpay.com/assets/53025/Apple_package_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = "Gewinnen Ihr Apple Wunschprodukt!";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/0d67c77952ab02c2/mobile/DE/2070/offers/594755";
+            "offer_id" = 594755;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 14;
+            "required_actions" = "Lade die App herunter und \U00f6ffne sie";
+            "store_id" = "";
+            teaser = "Lade die App herunter und \U00f6ffne sie";
+            thumbnail =             {
+                hires = "http://lh3.ggpht.com/oWwa35xdobuhe83QnKeiPJEV0RA5EvQsN6JUDeUi8WzcU5IjZ6M2DQsCn0W2KhcWryw=w300-rw";
+                lowres = "http://lh3.ggpht.com/oWwa35xdobuhe83QnKeiPJEV0RA5EvQsN6JUDeUi8WzcU5IjZ6M2DQsCn0W2KhcWryw=w300-rw";
+            };
+            "time_to_payout" =             {
+                amount = 300;
+                readable = "5 Minuten";
+            };
+            title = "pizza.de - Essen bestellen";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/2eb226e079b4f53a/mobile/DE/2070/offers/581340/preview";
+            "offer_id" = 581340;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 20;
+            "required_actions" = "Herunterladen und STARTEN";
+            "store_id" = "";
+            teaser = "Herunterladen und STARTEN";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/54111/unnamed_square_175.jpg";
+                lowres = "http://cdn4.sponsorpay.com/assets/54111/unnamed_square_60.jpg";
+            };
+            "time_to_payout" =             {
+                amount = 1200;
+                readable = "20 Minuten";
+            };
+            title = Mobbty;
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/fb9bbde49d980aae/mobile/DE/2070/offers/592748/preview";
+            "offer_id" = 592748;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 162;
+            "required_actions" = "Login and play & win the first level to get rewarded.";
+            "store_id" = "";
+            teaser = "Login and play & win the first level to get rewarded.";
+            thumbnail =             {
+                hires = "http://cdn2.sponsorpay.com/assets/54815/cat_square_175.png";
+                lowres = "http://cdn2.sponsorpay.com/assets/54815/cat_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 300;
+                readable = "5 Minuten";
+            };
+            title = "Play on Cats Crazy";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/b1edfa29070297c4/mobile/DE/2070/offers/581553/preview";
+            "offer_id" = 581553;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 9;
+            "required_actions" = "Melde dich an, lade dein Foto hoch";
+            "store_id" = "";
+            teaser = "Melde dich an, lade dein Foto hoch";
+            thumbnail =             {
+                hires = "http://cdn3.sponsorpay.com/assets/54210/cock_square_175.png";
+                lowres = "http://cdn3.sponsorpay.com/assets/54210/cock_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 0;
+                readable = "einer Minute";
+            };
+            title = "Coke Light";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/b868bf1509320b75/mobile/DE/2070/offers/582213/preview";
+            "offer_id" = 582213;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 104;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 108;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 110;
+            "required_actions" = "Registriere dich mit korrekten Daten ";
+            "store_id" = "";
+            teaser = "Registriere dich mit korrekten Daten ";
+            thumbnail =             {
+                hires = "http://cdn3.sponsorpay.com/assets/54246/a-klasse-nak-neue-a-klasse-mercedes-benz-genf-autosalon-2012-bilder-fotos011.jpg_1024680.clipular_square_175.png";
+                lowres = "http://cdn3.sponsorpay.com/assets/54246/a-klasse-nak-neue-a-klasse-mercedes-benz-genf-autosalon-2012-bilder-fotos011.jpg_1024680.clipular_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 1800;
+                readable = "30 Minuten";
+            };
+            title = "Gewinnen Sie die neue A-Klasse";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/87f3830dcbf03998/mobile/DE/2070/offers/588489";
+            "offer_id" = 588489;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 18;
+            "required_actions" = "Herunterladen und STARTEN";
+            "store_id" = "de.immowelt.android.immobiliensuche";
+            teaser = "Herunterladen und STARTEN";
+            thumbnail =             {
+                hires = "http://cdn2.sponsorpay.com/app_icons/39278/big_mobile_icon.png";
+                lowres = "http://cdn2.sponsorpay.com/app_icons/39278/small_mobile_icon.png";
+            };
+            "time_to_payout" =             {
+                amount = 3600;
+                readable = "einer Stunde";
+            };
+            title = "Immobilien, Wohnungen & H\U00e4user";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/53f980a619f1f42a/mobile/DE/2070/offers/586365";
+            "offer_id" = 586365;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 104;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 108;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 46;
+            "required_actions" = "Gib deine validen Daten ein und best\U00e4tige deine Email.";
+            "store_id" = "";
+            teaser = "Gib deine validen Daten ein und best\U00e4tige deine Email.";
+            thumbnail =             {
+                hires = "http://cdn3.sponsorpay.com/assets/38646/Screen_Shot_2013-12-10_at_3.36.25_PM_square_175.png";
+                lowres = "http://cdn3.sponsorpay.com/assets/38646/Screen_Shot_2013-12-10_at_3.36.25_PM_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 1500;
+                readable = "25 Minuten";
+            };
+            title = REWE;
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/76ea5939eeb0265a/mobile/DE/2070/offers/578907";
+            "offer_id" = 578907;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 101;
+                    readable = Download;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 9;
+            "required_actions" = "Download, install and launch a new app!";
+            "store_id" = "";
+            teaser = "Download, install and launch a new app!";
+            thumbnail =             {
+                hires = "http://cdn4.sponsorpay.com/assets/45087/android_square_175.png";
+                lowres = "http://cdn4.sponsorpay.com/assets/45087/android_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 2100;
+                readable = "35 Minuten";
+            };
+            title = " Free App of the Day ";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/3e068e84374edee5/mobile/DE/2070/offers/583455/preview";
+            "offer_id" = 583455;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 105;
+                    readable = Registrierung;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 72;
+            "required_actions" = "1. Anmeldeformular ausf\U00fcllen. 2. Code eingeben. 3. E-Mail best\U00e4tigen.";
+            "store_id" = "";
+            teaser = "1. Anmeldeformular ausf\U00fcllen. 2. Code eingeben. 3. E-Mail best\U00e4tigen.";
+            thumbnail =             {
+                hires = "http://cdn1.sponsorpay.com/assets/2552/mzl.ddpbsngt.175x175-75_square_175.png";
+                lowres = "http://cdn1.sponsorpay.com/assets/2552/mzl.ddpbsngt.175x175-75_square_60.png";
+            };
+            "time_to_payout" =             {
+                amount = 900;
+                readable = "15 Minuten";
+            };
+            title = "Telekom Gewinnspiel";
+        },
+                {
+            link = "http://api.sponsorpay.com/36fb9926d73e30afa350fd544e5c1804/8b10d2e847981142/mobile/DE/2070/offers/582126/preview";
+            "offer_id" = 582126;
+            "offer_types" =             (
+                                {
+                    "offer_type_id" = 102;
+                    readable = Proben;
+                },
+                                {
+                    "offer_type_id" = 112;
+                    readable = Gratis;
+                }
+            );
+            payout = 418;
+            "required_actions" = "Registriere dich mit validen Daten und deiner Kreditkarte.";
+            "store_id" = "";
+            teaser = "Registriere dich mit validen Daten und deiner Kreditkarte.";
+            thumbnail =             {
+                hires = "http://cdn2.sponsorpay.com/assets/49989/cinematrix_ii_square_175.JPG";
+                lowres = "http://cdn2.sponsorpay.com/assets/49989/cinematrix_ii_square_60.JPG";
+            };
+            "time_to_payout" =             {
+                amount = 7800;
+                readable = "2 Stunden";
+            };
+            title = "Cinematrix. Schaue dir das Video an";
+        }
+    );
+    pages = 5;
+}

@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers);
+typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers, NSInteger remainingPageCount);
 typedef void(^FCOffersAPIManagerFailure)(NSError *error);
 
-extern NSInteger FCWrongRequestErrorCode;
 extern NSInteger FCMissingParametersErrorCode;
 
 @interface FCOffersAPIManager : NSObject
