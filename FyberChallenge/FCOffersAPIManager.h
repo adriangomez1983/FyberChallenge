@@ -8,22 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers, NSUInteger remainingPages);
+typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers);
 typedef void(^FCOffersAPIManagerFailure)(NSError *error);
 
 extern NSInteger FCWrongRequestErrorCode;
+extern NSInteger FCMissingParametersErrorCode;
 
 @interface FCOffersAPIManager : NSObject
 
+@property (nonatomic, strong) NSString *appID;
+@property (nonatomic, strong) NSString *apiKey;
+@property (nonatomic, strong) NSString *uid;
+@property (nonatomic, strong) NSString *ipAddr;
+@property (nonatomic, strong) NSString *locale;
+@property (nonatomic, strong) NSString *offerType;
+
 +(instancetype)sharedInstance;
 
--(void)queryWithUID:(NSString *)uid
-         withAPIKey:(NSString *)apiKey
-          withAppID:(NSString *)appID
-      withIPAddress:(NSString *)ipAddr
-         withLocale:(NSString *)locale
-      withOfferType:(NSString *)offerType
-     withCompletion:(FCOffersAPIManagerCompletion)completion
-        withFailure:(FCOffersAPIManagerFailure)failure;
+-(void)fetchOffersWithOfferType:(NSString *)offerType
+                 withCompletion:(FCOffersAPIManagerCompletion)completion
+                    withFailure:(FCOffersAPIManagerFailure)failure;
 
 @end

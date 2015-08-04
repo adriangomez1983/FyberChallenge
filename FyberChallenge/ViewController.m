@@ -26,6 +26,7 @@ static NSUInteger kRetryIndex = 1;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *offersData;
+@property (weak, nonatomic) IBOutlet UILabel *recordsCountLabel;
 
 @end
 
@@ -39,9 +40,26 @@ static NSUInteger kRetryIndex = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self showNoOffers];
+    [self updateRecordsCountWithCount:0];
+    
+}
+
+-(void)updateRecordsCountWithCount:(NSInteger)count
+{
+    self.recordsCountLabel.text = [NSString stringWithFormat:@"%lu", count];
+}
+
+-(void)showNoOffers
+{
+    self.noOffersLabel.hidden = NO;
+    self.tableView.hidden = YES;
+}
+
+-(void)hideNoOffers
+{
     self.noOffersLabel.hidden = YES;
     self.tableView.hidden = NO;
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,20 +91,34 @@ static NSUInteger kRetryIndex = 1;
 {
     NSLog(@"Search action");
     
-    [[FCOffersAPIManager sharedInstance] queryWithUID:self.uidTextField.text
-                                           withAPIKey:self.apiKeyTextField.text
-                                            withAppID:self.appIDTextField.text
-                                        withIPAddress:givenIPAddress
-                                           withLocale:givenLocale
-                                        withOfferType:givenOfferTypes
-                                       withCompletion:^(NSArray *offers, NSUInteger remainingPages)
+    __weak __typeof(self) weakSelf = self;
+    [FCOffersAPIManager sharedInstance].uid = self.uidTextField.text;
+    [FCOffersAPIManager sharedInstance].apiKey = self.apiKeyTextField.text;
+    [FCOffersAPIManager sharedInstance].appID = self.appIDTextField.text;
+    [FCOffersAPIManager sharedInstance].ipAddr = givenIPAddress;
+    [FCOffersAPIManager sharedInstance].locale = givenLocale;
+    [[FCOffersAPIManager sharedInstance] fetchOffersWithOfferType:givenOfferTypes
+                                                   withCompletion:^(NSArray *offers)
     {
-        self.offersData = offers;
-        [self.tableView reloadData];
+        __strong ViewController *strongSelf = weakSelf;
+        if (offers.count == 0)
+        {
+            [strongSelf showNoOffers];
+        }
+        else
+        {
+            [strongSelf hideNoOffers];
+            strongSelf.offersData = offers;
+            [strongSelf.tableView reloadData];
+        }
+        [strongSelf updateRecordsCountWithCount:offers.count];
     }
                                           withFailure:^(NSError *error)
     {
-        [self displayErrorWithError:error];
+        __strong ViewController *strongSelf = weakSelf;
+        [strongSelf showNoOffers];
+        [strongSelf updateRecordsCountWithCount:0];
+        [strongSelf displayErrorWithError:error];
     }];
 }
 
@@ -124,13 +156,8 @@ static NSUInteger kRetryIndex = 1;
 {
     if (buttonIndex == kRetryIndex)
     {
-        [[FCOffersAPIManager sharedInstance] queryWithUID:self.uidTextField.text
-                                               withAPIKey:self.apiKeyTextField.text
-                                                withAppID:self.appIDTextField.text
-                                            withIPAddress:givenIPAddress
-                                               withLocale:givenLocale
-                                            withOfferType:givenOfferTypes
-                                           withCompletion:^(NSArray *offers, NSUInteger remainingPages)
+        [[FCOffersAPIManager sharedInstance] fetchOffersWithOfferType:givenOfferTypes
+                                                       withCompletion:^(NSArray *offers)
          {
              self.offersData = offers;
              [self.tableView reloadData];
