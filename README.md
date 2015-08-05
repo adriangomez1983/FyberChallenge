@@ -16,3 +16,6 @@ Here is the implementation of the proposed challenge
 * Support multiple calls
 * Caching
 * Persistance
+
+<h2>A class diagram </h2>
+![Alt text](/../master/Diagrams/classes.png?raw=true "Optional Title")
