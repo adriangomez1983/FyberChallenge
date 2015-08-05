@@ -8,11 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-//"time_to_payout" : {
-//    "amount": 1800 ,
-//    "readable": "30 minutes"
-//}
-
 @interface FCTimeToPayOut : NSObject
 @property (nonatomic, strong, readonly) NSNumber *amount;
 @property (nonatomic, strong, readonly) NSString *printableTime;

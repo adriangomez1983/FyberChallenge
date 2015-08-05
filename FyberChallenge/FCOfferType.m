@@ -6,11 +6,6 @@
 //  Copyright (c) 2015 N&#233;stor Adri&#225;n G&#243;mez Elfi. All rights reserved.
 //
 
-//{
-//    "offer_type_id": 101,
-//    "readable": "Download"
-//}
-
 #import "FCOfferType.h"
 
 static NSString *offerTypeIDKey     =   @"offer_type_id";

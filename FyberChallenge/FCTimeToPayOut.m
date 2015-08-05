@@ -6,11 +6,6 @@
 //  Copyright (c) 2015 N&#233;stor Adri&#225;n G&#243;mez Elfi. All rights reserved.
 //
 
-//"time_to_payout" : {
-//    "amount": 1800 ,
-//    "readable": "30 minutes"
-//}
-
 #import "FCTimeToPayOut.h"
 
 static NSString *amountKey  =   @"amount";
