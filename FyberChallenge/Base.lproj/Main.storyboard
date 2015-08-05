@@ -36,7 +36,7 @@
                                     <constraint firstAttribute="width" constant="192" id="Qgm-9J-KpZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Qgm-9J-KpZ"/>
@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="width" constant="192" id="m2I-yg-ulv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2070" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fB9-W2-xSC">
                                 <rect key="frame" x="204" y="132" width="192" height="30"/>
@@ -57,7 +57,7 @@
                                     <constraint firstAttribute="width" constant="192" id="y9p-Jz-dhU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5M-I3-zWQ">
                                 <rect key="frame" x="404" y="132" width="48" height="30"/>
@@ -136,17 +136,18 @@
                                     <constraint firstAttribute="width" constant="91" id="9Bk-TJ-I7c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Records count:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-vk-CXz">
                                 <rect key="frame" x="78" y="170" width="117.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="heQ-mY-4Y9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="6By-OX-lLq"/>
                             <constraint firstItem="q5M-I3-zWQ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="112" id="6gy-au-ajn"/>
@@ -173,6 +174,9 @@
                             <constraint firstItem="heQ-mY-4Y9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="191" id="ubL-pP-ewn"/>
                             <constraint firstItem="fB9-W2-xSC" firstAttribute="top" secondItem="Ooa-XK-WFX" secondAttribute="bottom" constant="13" id="vJH-PT-OMB"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bnn-1p-8oi" appends="YES" id="Yfa-dM-Xfr"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -187,6 +191,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bnn-1p-8oi">
+                    <connections>
+                        <action selector="dismissKeyboardIfNeeded:" destination="vXZ-lx-hvc" id="Ec9-Jq-t2i"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

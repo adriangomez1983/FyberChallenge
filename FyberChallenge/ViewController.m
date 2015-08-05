@@ -42,10 +42,9 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self updateRecordsCountWithCount:0];
-    
 }
 
--(void)dismissKeyboardIfNeeded
+-(IBAction)dismissKeyboardIfNeeded:(id)sender
 {
     [self.apiKeyTextField resignFirstResponder];
     [self.uidTextField resignFirstResponder];
@@ -54,7 +53,7 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
 
 -(void)updateRecordsCountWithCount:(NSInteger)count
 {
-    [self dismissKeyboardIfNeeded];
+    [self dismissKeyboardIfNeeded:nil];
     if (count == 0)
     {
         self.recordsCountLabel.text = NSLocalizedString(@"No Offers", nil);
@@ -94,7 +93,7 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
 
 - (IBAction)onSearchAction:(id)sender
 {
-    [self dismissKeyboardIfNeeded];
+    [self dismissKeyboardIfNeeded:nil];
     self.searchButton.enabled = NO;
     [self emptyResults];
     __block MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -108,27 +107,27 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
     [FCOffersAPIManager sharedInstance].locale = givenLocale;
     [[FCOffersAPIManager sharedInstance] fetchOffersWithOfferType:givenOfferTypes
                                                    withCompletion:^(NSArray *offers, NSInteger remainingPageCount)
-    {
-        __strong ViewController *strongSelf = weakSelf;
-        strongSelf.offersData = offers;
-        [strongSelf.tableView reloadData];
-        [strongSelf updateRecordsCountWithCount:offers.count];
-        if (remainingPageCount == 0)
-        {
-            strongSelf.searchButton.enabled = YES;
-            [hud hide:YES];
-        }
-    }
-                                          withFailure:^(NSError *error)
-    {
-        __strong ViewController *strongSelf = weakSelf;
-        [strongSelf updateRecordsCountWithCount:0];
-        strongSelf.offersData = @[];
-        [strongSelf.tableView reloadData];
-        [strongSelf displayErrorWithError:error];
-        strongSelf.searchButton.enabled = YES;
-        [hud hide:YES];
-    }];
+     {
+         __strong ViewController *strongSelf = weakSelf;
+         strongSelf.offersData = offers;
+         [strongSelf.tableView reloadData];
+         [strongSelf updateRecordsCountWithCount:offers.count];
+         if (remainingPageCount == 0)
+         {
+             strongSelf.searchButton.enabled = YES;
+             [hud hide:YES];
+         }
+     }
+                                                      withFailure:^(NSError *error)
+     {
+         __strong ViewController *strongSelf = weakSelf;
+         [strongSelf updateRecordsCountWithCount:0];
+         strongSelf.offersData = @[];
+         [strongSelf.tableView reloadData];
+         [strongSelf displayErrorWithError:error];
+         strongSelf.searchButton.enabled = YES;
+         [hud hide:YES];
+     }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
