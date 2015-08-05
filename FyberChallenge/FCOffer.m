@@ -45,6 +45,7 @@ static NSString *lowresthumbnailKey     =   @"lowres";
 static NSString *hiresthumbnailKey      =   @"hires";
 static NSString *payoutKey              =   @"payout";
 static NSString *timeToPayOutKey        =   @"time_to_payout";
+static NSString *storeIDKey             =   @"store_id";
 
 @implementation FCOffer
 
@@ -63,6 +64,7 @@ static NSString *timeToPayOutKey        =   @"time_to_payout";
         _hiresThumbnailLink = thumbnails[hiresthumbnailKey] ? : @"";
         _payout = [NSNumber numberWithInteger:[dictionary[payoutKey] integerValue]];
         _timeToPayout = [[FCTimeToPayOut alloc] initWithDictionary:dictionary[timeToPayOutKey]];
+        _storeID = dictionary[storeIDKey] ? : @"";
     }
     return self;
 }

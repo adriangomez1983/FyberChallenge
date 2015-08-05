@@ -22,7 +22,7 @@ static FCOffersAPIManager *_instance = nil;
 
 @interface FCOffersAPIManager()
 
-@property (nonatomic, assign) NSInteger totalPageCount;
+@property (nonatomic, assign) NSInteger totalPagesCount;
 @property (nonatomic, assign) NSInteger currentPageNumber;
 @property (nonatomic, copy) FCOffersAPIManagerCompletion completion;
 @property (nonatomic, copy) FCOffersAPIManagerFailure failure;
@@ -36,7 +36,7 @@ static FCOffersAPIManager *_instance = nil;
 {
     if (self = [super init])
     {
-        _totalPageCount = 0;
+        _totalPagesCount = 0;
         _currentPageNumber = 1;
         
         _appID = @"";
@@ -80,7 +80,8 @@ static FCOffersAPIManager *_instance = nil;
            withCompletion:(FCOffersAPIManagerCompletion)completion
               withFailure:(FCOffersAPIManagerFailure)failure;
 {
-    self.totalPageCount = 0;
+    self.totalPagesCount = 0;
+    self.currentPageNumber = 1;
     [self.currentOffers removeAllObjects];
     
     self.completion = completion;
@@ -121,18 +122,16 @@ static FCOffersAPIManager *_instance = nil;
 
 -(void)processNextPage
 {
-    NSString *allParams = [self buildParamsWithAppID:self.appID
-                                          withApiKey:self.apiKey
-                                             withUID:self.uid
-                                          withIPAddr:self.ipAddr
-                                          withLocale:self.locale
-                                       withOfferType:self.offerType
-                                      withPageNumber:@(self.currentPageNumber)];
+    NSString *queryStr = [self buildQueryWithAppID:self.appID
+                                        withApiKey:self.apiKey
+                                           withUID:self.uid
+                                        withIPAddr:self.ipAddr
+                                        withLocale:self.locale
+                                     withOfferType:self.offerType
+                                    withPageNumber:@(self.currentPageNumber)
+                                     withTimestamp:[[NSDate date] timeIntervalSince1970]];
     
-    NSString *fullParams = [NSString stringWithFormat:@"%@&%@", allParams, self.apiKey];
-    NSString *paramsHash = [self sha1:fullParams];
-    NSString *allParamsWithHash = [NSString stringWithFormat:@"%@&hashkey=%@", allParams, paramsHash];
-    NSString *queryStr = [NSString stringWithFormat:@"%@.%@?%@", kOffersURL, @"json", allParamsWithHash];
+
     
     __weak __typeof(self) weakSelf = self;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -157,9 +156,9 @@ static FCOffersAPIManager *_instance = nil;
              }
              else
              {
-                 if (strongSelf.totalPageCount <= 0)
+                 if (strongSelf.totalPagesCount <= 0)
                  {
-                     strongSelf.totalPageCount = [offersDataDict[@"pages"] integerValue];
+                     strongSelf.totalPagesCount = [offersDataDict[@"pages"] integerValue];
                      strongSelf.currentPageNumber = 2;
                  }
                  else
@@ -169,19 +168,19 @@ static FCOffersAPIManager *_instance = nil;
                  NSArray *offers = [FCOffersParser parse:offersDataDict];
                  [strongSelf.currentOffers addObjectsFromArray:offers];
                  NSInteger remainingPages = 0;
-                 if (strongSelf.totalPageCount != 0)
+                 if (strongSelf.totalPagesCount != 0)
                  {
-                     remainingPages = strongSelf.totalPageCount - strongSelf.currentPageNumber + 1;
+                     remainingPages = strongSelf.totalPagesCount - strongSelf.currentPageNumber + 1;
                  }
                  strongSelf.completion(strongSelf.currentOffers, remainingPages);
-                 if (strongSelf.currentPageNumber <= strongSelf.totalPageCount)
+                 if (strongSelf.currentPageNumber <= strongSelf.totalPagesCount)
                  {
                      [strongSelf processNextPage];
                  }
                  
              }
          }
-         else if (self.currentPageNumber <= strongSelf.totalPageCount)
+         else if (self.currentPageNumber <= strongSelf.totalPagesCount || strongSelf.totalPagesCount == 0)
          {
              [strongSelf processNextPage];
          }
@@ -198,18 +197,18 @@ static FCOffersAPIManager *_instance = nil;
      }];
 }
 
--(NSString *)buildParamsWithAppID:(NSString *)appID
-                       withApiKey:(NSString *)apiKey
-                          withUID:(NSString *)uid
-                       withIPAddr:(NSString *)ipAddr
-                       withLocale:(NSString *)locale
-                    withOfferType:(NSString *)offerTypes
-                   withPageNumber:(NSNumber *)pageNumber
+-(NSString *)buildQueryWithAppID:(NSString *)appID
+                      withApiKey:(NSString *)apiKey
+                         withUID:(NSString *)uid
+                      withIPAddr:(NSString *)ipAddr
+                      withLocale:(NSString *)locale
+                   withOfferType:(NSString *)offerTypes
+                  withPageNumber:(NSNumber *)pageNumber
+                   withTimestamp:(NSTimeInterval)timestamp
 {
     NSString *appleIDFA = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     NSString *IDFATrackingEnabled = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled] ? @"true" : @"false";
     NSString *osVersion = [[UIDevice currentDevice] systemVersion];
-    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{
                              @"appid"   :   appID,
@@ -217,7 +216,7 @@ static FCOffersAPIManager *_instance = nil;
                              @"ip"      :   ipAddr,
                              @"locale"  :   locale,
                              @"os_version"  :   osVersion,
-                             @"timestamp"   :  [NSString stringWithFormat:@"%lu", [[NSNumber numberWithDouble:timeStamp] integerValue] ],
+                             @"timestamp"   :  [NSString stringWithFormat:@"%lu", [[NSNumber numberWithDouble:timestamp] integerValue] ],
                              @"apple_idfa"  :   appleIDFA,
                              @"apple_idfa_tracking_enabled" :   IDFATrackingEnabled,
                              @"offer_types" :   offerTypes
@@ -241,7 +240,11 @@ static FCOffersAPIManager *_instance = nil;
         [query addObject:paramValue];
     }
     
-    return [query componentsJoinedByString:@"&"];
+    NSString *allParams = [query componentsJoinedByString:@"&"];
+    NSString *fullParams = [NSString stringWithFormat:@"%@&%@", allParams, apiKey];
+    NSString *paramsHash = [self sha1:fullParams];
+    NSString *allParamsWithHash = [NSString stringWithFormat:@"%@&hashkey=%@", allParams, paramsHash];
+    return [NSString stringWithFormat:@"%@.%@?%@", kOffersURL, @"json", allParamsWithHash];
 }
 
 -(BOOL)responseIsValidWithResponseSignature:(NSString *)responseSignature

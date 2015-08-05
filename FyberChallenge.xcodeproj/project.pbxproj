@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26EAFAEFAAF1E33CA38D8FED /* libPods-FyberChallengeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74890AC4A259ED3DA14589C0 /* libPods-FyberChallengeTests.a */; };
 		3F440FCE568227EFDFA35006 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C840A2558DF4CAB785B827F3 /* libPods.a */; };
 		846040021B6EB27E00B6C840 /* FCOfferTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846040011B6EB27E00B6C840 /* FCOfferTableViewCell.m */; };
 		84A650E91B6C5F5700BC6EE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A650E81B6C5F5700BC6EE6 /* main.m */; };
@@ -15,7 +16,6 @@
 		84A650F21B6C5F5700BC6EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A650F01B6C5F5700BC6EE6 /* Main.storyboard */; };
 		84A650F41B6C5F5700BC6EE6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A650F31B6C5F5700BC6EE6 /* Images.xcassets */; };
 		84A650F71B6C5F5700BC6EE6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A650F51B6C5F5700BC6EE6 /* LaunchScreen.xib */; };
-		84A651031B6C5F5700BC6EE6 /* FyberChallengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A651021B6C5F5700BC6EE6 /* FyberChallengeTests.m */; };
 		84A6510E1B6C623F00BC6EE6 /* FCOffersAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A6510D1B6C623F00BC6EE6 /* FCOffersAPIManager.m */; };
 		84A651101B6C6E1600BC6EE6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A6510F1B6C6E1600BC6EE6 /* AdSupport.framework */; };
 		84A651141B6C8B8E00BC6EE6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A651131B6C8B8E00BC6EE6 /* Security.framework */; };
@@ -23,6 +23,9 @@
 		84CECB991B6D1A53006207DC /* FCOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CECB981B6D1A53006207DC /* FCOffer.m */; };
 		84CECB9C1B6D1C46006207DC /* FCTimeToPayOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CECB9B1B6D1C46006207DC /* FCTimeToPayOut.m */; };
 		84CECB9F1B6D1CBF006207DC /* FCOfferType.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CECB9E1B6D1CBF006207DC /* FCOfferType.m */; };
+		84F49C151B722A680090FC51 /* FCOffersAPIManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F49C141B722A680090FC51 /* FCOffersAPIManagerTests.m */; };
+		84F49C171B722B480090FC51 /* offers.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F49C161B722B480090FC51 /* offers.json */; };
+		84F49C1B1B722CFA0090FC51 /* FCOffersParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F49C1A1B722CFA0090FC51 /* FCOffersParserTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74890AC4A259ED3DA14589C0 /* libPods-FyberChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FyberChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846040001B6EB27E00B6C840 /* FCOfferTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCOfferTableViewCell.h; sourceTree = "<group>"; };
 		846040011B6EB27E00B6C840 /* FCOfferTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCOfferTableViewCell.m; sourceTree = "<group>"; };
 		84A650E31B6C5F5700BC6EE6 /* FyberChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FyberChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +54,6 @@
 		84A650F61B6C5F5700BC6EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84A650FC1B6C5F5700BC6EE6 /* FyberChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FyberChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A651011B6C5F5700BC6EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84A651021B6C5F5700BC6EE6 /* FyberChallengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FyberChallengeTests.m; sourceTree = "<group>"; };
 		84A6510C1B6C623F00BC6EE6 /* FCOffersAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCOffersAPIManager.h; sourceTree = "<group>"; };
 		84A6510D1B6C623F00BC6EE6 /* FCOffersAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCOffersAPIManager.m; sourceTree = "<group>"; };
 		84A6510F1B6C6E1600BC6EE6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -64,8 +67,13 @@
 		84CECB9B1B6D1C46006207DC /* FCTimeToPayOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCTimeToPayOut.m; sourceTree = "<group>"; };
 		84CECB9D1B6D1CBF006207DC /* FCOfferType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCOfferType.h; sourceTree = "<group>"; };
 		84CECB9E1B6D1CBF006207DC /* FCOfferType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCOfferType.m; sourceTree = "<group>"; };
+		84F49C141B722A680090FC51 /* FCOffersAPIManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCOffersAPIManagerTests.m; sourceTree = "<group>"; };
+		84F49C161B722B480090FC51 /* offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = offers.json; sourceTree = "<group>"; };
+		84F49C1A1B722CFA0090FC51 /* FCOffersParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCOffersParserTests.m; sourceTree = "<group>"; };
+		88E2F59C8DB093127E1864D6 /* Pods-FyberChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FyberChallengeTests/Pods-FyberChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		95CEFC416D3A8B72D4075BD5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C840A2558DF4CAB785B827F3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA19FABEF9B788C05902AF6A /* Pods-FyberChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FyberChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FyberChallengeTests/Pods-FyberChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F6123F47987929DDBFB57EBA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26EAFAEFAAF1E33CA38D8FED /* libPods-FyberChallengeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +106,7 @@
 				84A651111B6C8B1800BC6EE6 /* libcommonCrypto.dylib */,
 				84A6510F1B6C6E1600BC6EE6 /* AdSupport.framework */,
 				C840A2558DF4CAB785B827F3 /* libPods.a */,
+				74890AC4A259ED3DA14589C0 /* libPods-FyberChallengeTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,26 +134,8 @@
 		84A650E51B6C5F5700BC6EE6 /* FyberChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				84A650EA1B6C5F5700BC6EE6 /* AppDelegate.h */,
-				84A650EB1B6C5F5700BC6EE6 /* AppDelegate.m */,
-				84A650ED1B6C5F5700BC6EE6 /* ViewController.h */,
-				84A650EE1B6C5F5700BC6EE6 /* ViewController.m */,
-				846040001B6EB27E00B6C840 /* FCOfferTableViewCell.h */,
-				846040011B6EB27E00B6C840 /* FCOfferTableViewCell.m */,
-				84A650F01B6C5F5700BC6EE6 /* Main.storyboard */,
-				84A650F31B6C5F5700BC6EE6 /* Images.xcassets */,
-				84A650F51B6C5F5700BC6EE6 /* LaunchScreen.xib */,
-				84A650E61B6C5F5700BC6EE6 /* Supporting Files */,
-				84A6510C1B6C623F00BC6EE6 /* FCOffersAPIManager.h */,
-				84A6510D1B6C623F00BC6EE6 /* FCOffersAPIManager.m */,
-				84CECB941B6D1999006207DC /* FCOffersParser.h */,
-				84CECB951B6D1999006207DC /* FCOffersParser.m */,
-				84CECB971B6D1A53006207DC /* FCOffer.h */,
-				84CECB981B6D1A53006207DC /* FCOffer.m */,
-				84CECB9A1B6D1C46006207DC /* FCTimeToPayOut.h */,
-				84CECB9B1B6D1C46006207DC /* FCTimeToPayOut.m */,
-				84CECB9D1B6D1CBF006207DC /* FCOfferType.h */,
-				84CECB9E1B6D1CBF006207DC /* FCOfferType.m */,
+				84F49C1E1B724F7C0090FC51 /* Application */,
+				84F49C1D1B724F730090FC51 /* SDK */,
 			);
 			path = FyberChallenge;
 			sourceTree = "<group>";
@@ -160,8 +152,9 @@
 		84A650FF1B6C5F5700BC6EE6 /* FyberChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				84A651021B6C5F5700BC6EE6 /* FyberChallengeTests.m */,
+				84F49C141B722A680090FC51 /* FCOffersAPIManagerTests.m */,
 				84A651001B6C5F5700BC6EE6 /* Supporting Files */,
+				84F49C1A1B722CFA0090FC51 /* FCOffersParserTests.m */,
 			);
 			path = FyberChallengeTests;
 			sourceTree = "<group>";
@@ -169,9 +162,44 @@
 		84A651001B6C5F5700BC6EE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84F49C161B722B480090FC51 /* offers.json */,
 				84A651011B6C5F5700BC6EE6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84F49C1D1B724F730090FC51 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				84A6510C1B6C623F00BC6EE6 /* FCOffersAPIManager.h */,
+				84A6510D1B6C623F00BC6EE6 /* FCOffersAPIManager.m */,
+				84CECB941B6D1999006207DC /* FCOffersParser.h */,
+				84CECB951B6D1999006207DC /* FCOffersParser.m */,
+				84CECB971B6D1A53006207DC /* FCOffer.h */,
+				84CECB981B6D1A53006207DC /* FCOffer.m */,
+				84CECB9A1B6D1C46006207DC /* FCTimeToPayOut.h */,
+				84CECB9B1B6D1C46006207DC /* FCTimeToPayOut.m */,
+				84CECB9D1B6D1CBF006207DC /* FCOfferType.h */,
+				84CECB9E1B6D1CBF006207DC /* FCOfferType.m */,
+			);
+			name = SDK;
+			sourceTree = "<group>";
+		};
+		84F49C1E1B724F7C0090FC51 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				84A650EA1B6C5F5700BC6EE6 /* AppDelegate.h */,
+				84A650EB1B6C5F5700BC6EE6 /* AppDelegate.m */,
+				84A650ED1B6C5F5700BC6EE6 /* ViewController.h */,
+				84A650EE1B6C5F5700BC6EE6 /* ViewController.m */,
+				846040001B6EB27E00B6C840 /* FCOfferTableViewCell.h */,
+				846040011B6EB27E00B6C840 /* FCOfferTableViewCell.m */,
+				84A650F01B6C5F5700BC6EE6 /* Main.storyboard */,
+				84A650F31B6C5F5700BC6EE6 /* Images.xcassets */,
+				84A650F51B6C5F5700BC6EE6 /* LaunchScreen.xib */,
+				84A650E61B6C5F5700BC6EE6 /* Supporting Files */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 		FAF5A45F784C15770DEABD5D /* Pods */ = {
@@ -179,6 +207,8 @@
 			children = (
 				95CEFC416D3A8B72D4075BD5 /* Pods.debug.xcconfig */,
 				F6123F47987929DDBFB57EBA /* Pods.release.xcconfig */,
+				DA19FABEF9B788C05902AF6A /* Pods-FyberChallengeTests.debug.xcconfig */,
+				88E2F59C8DB093127E1864D6 /* Pods-FyberChallengeTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -209,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A651091B6C5F5700BC6EE6 /* Build configuration list for PBXNativeTarget "FyberChallengeTests" */;
 			buildPhases = (
+				47AFA0F6999B2DF600B279BE /* Check Pods Manifest.lock */,
 				84A650F81B6C5F5700BC6EE6 /* Sources */,
 				84A650F91B6C5F5700BC6EE6 /* Frameworks */,
 				84A650FA1B6C5F5700BC6EE6 /* Resources */,
+				3F548DD8D33B93E75B860FC9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -275,12 +307,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F49C171B722B480090FC51 /* offers.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3F548DD8D33B93E75B860FC9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FyberChallengeTests/Pods-FyberChallengeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47AFA0F6999B2DF600B279BE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		B2E9AF555BF458249A1D7C31 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,7 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A651031B6C5F5700BC6EE6 /* FyberChallengeTests.m in Sources */,
+				84F49C1B1B722CFA0090FC51 /* FCOffersParserTests.m in Sources */,
+				84F49C151B722A680090FC51 /* FCOffersAPIManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +544,7 @@
 		};
 		84A6510A1B6C5F5700BC6EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA19FABEF9B788C05902AF6A /* Pods-FyberChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -499,6 +564,7 @@
 		};
 		84A6510B1B6C5F5700BC6EE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88E2F59C8DB093127E1864D6 /* Pods-FyberChallengeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

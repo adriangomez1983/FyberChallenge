@@ -50,6 +50,7 @@
 @property (nonatomic, strong, readonly) NSString *hiresThumbnailLink;
 @property (nonatomic, strong, readonly) NSNumber *payout;
 @property (nonatomic, strong, readonly) FCTimeToPayOut *timeToPayout;
+@property (nonatomic, strong, readonly) NSString *storeID;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 @end

@@ -92,7 +92,6 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
     [[FCOffersAPIManager sharedInstance] fetchOffersWithOfferType:givenOfferTypes
                                                    withCompletion:^(NSArray *offers, NSInteger remainingPageCount)
     {
-         NSLog(@"success remaining counts %lu", remainingPageCount);
         __strong ViewController *strongSelf = weakSelf;
         strongSelf.offersData = offers;
         [strongSelf.tableView reloadData];
@@ -105,7 +104,6 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
     }
                                           withFailure:^(NSError *error)
     {
-         NSLog(@"failure");
         __strong ViewController *strongSelf = weakSelf;
         [strongSelf updateRecordsCountWithCount:0];
         strongSelf.offersData = @[];

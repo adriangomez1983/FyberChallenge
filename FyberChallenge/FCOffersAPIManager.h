@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers, NSInteger remainingPageCount);
+typedef void(^FCOffersAPIManagerCompletion)(NSArray *offers, NSInteger remainingPagesCount);
 typedef void(^FCOffersAPIManagerFailure)(NSError *error);
 
 extern NSInteger FCMissingParametersErrorCode;
