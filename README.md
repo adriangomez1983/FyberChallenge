@@ -2,6 +2,7 @@
 Here is the implementation of the proposed challenge
 
 <h2>Design decisions and assumptions</h2>
+* Using cocoa pods
 * Every request must to be signed and every response must to be validated as suggested in the documentation
 * In case of response validation failure always retry
 * If more than one page is needed always retrieve all the data
