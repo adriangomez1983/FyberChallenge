@@ -45,8 +45,16 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
     
 }
 
+-(void)dismissKeyboardIfNeeded
+{
+    [self.apiKeyTextField resignFirstResponder];
+    [self.uidTextField resignFirstResponder];
+    [self.appIDTextField resignFirstResponder];
+}
+
 -(void)updateRecordsCountWithCount:(NSInteger)count
 {
+    [self dismissKeyboardIfNeeded];
     if (count == 0)
     {
         self.recordsCountLabel.text = NSLocalizedString(@"No Offers", nil);
@@ -77,9 +85,18 @@ static NSString *FCOfferCellIdentifier = @"cellIdentifier";
     self.searchButton.enabled = YES;
 }
 
+-(void)emptyResults
+{
+    [self updateRecordsCountWithCount:0];
+    self.offersData = @[];
+    [self.tableView reloadData];
+}
+
 - (IBAction)onSearchAction:(id)sender
 {
+    [self dismissKeyboardIfNeeded];
     self.searchButton.enabled = NO;
+    [self emptyResults];
     __block MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = NSLocalizedString(@"Getting offers", nil);
     

@@ -136,6 +136,8 @@ static FCOffersAPIManager *_instance = nil;
     __weak __typeof(self) weakSelf = self;
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    queryStr = [queryStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
     [manager GET:queryStr
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject)
